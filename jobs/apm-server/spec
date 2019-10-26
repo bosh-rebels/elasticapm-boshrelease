@@ -15,6 +15,11 @@ consumes:
   optional: true
 
 properties:
+  apm-server.host:
+    description: "Host for APM Server to listen requests to"
+  apm-server.port:
+    description: "Port for APM Server to listen requests to"
+    default: 8200
   apm-server.elasticsearch.prefer_bosh_link:
     description: "Use bosh link to connect elasticsearch in prioriy to apm-server.elasticsearch.host/port"
     default: true

@@ -24,6 +24,20 @@ describe 'apm-server job' do
   describe 'apm-server.yml' do
     let(:template) { job.template('config/apm-server.yml') }
 
+    it 'configure its own host and port right' do
+      config = YAML.load(template.render(
+        {
+          'apm-server' => {
+            'host' => 'localhost',
+            'port' => 8200 
+          } 
+        },
+        consumes: []
+      )
+    )
+    expect(config['apm-server']['host']).to eq('localhost:8200')
+    end
+
     it 'configures elastic search hosts from properties succesfully' do
       config = YAML.load(template.render(
           {

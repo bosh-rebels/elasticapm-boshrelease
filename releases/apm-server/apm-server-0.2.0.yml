@@ -1,0 +1,17 @@
+name: apm-server
+version: 0.2.0
+commit_hash: 73e7e21
+uncommitted_changes: true
+jobs:
+- name: apm-server
+  version: e504796a71743b6bd3de3fbc4eb5533bbf60575a3b4b3d4f9ef6531dea15bfec
+  fingerprint: e504796a71743b6bd3de3fbc4eb5533bbf60575a3b4b3d4f9ef6531dea15bfec
+  sha1: sha256:c274ec4af696972f6f41253678c4642b02f8079cdd3af4cdba0854515a2684f4
+  packages:
+  - apm-server
+packages:
+- name: apm-server
+  version: 50460bbdc608e8020f260a79620217482f6ba4597b79b10428bfc92fd175a1fa
+  fingerprint: 50460bbdc608e8020f260a79620217482f6ba4597b79b10428bfc92fd175a1fa
+  sha1: sha256:2c0d049e603ec8a21382b52bde800131e1c5e80e492040995d374b0f21f5b506
+  dependencies: []
