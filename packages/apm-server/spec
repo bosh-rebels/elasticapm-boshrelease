@@ -1,0 +1,7 @@
+---
+name: apm-server
+
+dependencies: []
+
+files:
+- apm-server/apm-server-7.4.1.tar.gz

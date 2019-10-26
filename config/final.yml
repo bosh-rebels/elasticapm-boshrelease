@@ -1,0 +1,5 @@
+name: elasticapm-boshrelease
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/apm-server-blobs

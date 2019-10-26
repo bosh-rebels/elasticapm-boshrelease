@@ -1,0 +1,5 @@
+check process apm-server
+  with pidfile /var/vcap/sys/run/apm-server/apm-server.pid
+  start program "/var/vcap/jobs/apm-server/bin/ctl start"
+  stop program "/var/vcap/jobs/apm-server/bin/ctl stop"
+  group vcap

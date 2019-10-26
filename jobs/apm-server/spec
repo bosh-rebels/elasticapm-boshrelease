@@ -1,0 +1,30 @@
+---
+name: apm-server
+
+templates:
+  bin/ctl: bin/ctl
+  bin/ctl_utils.sh: bin/ctl_utils.sh
+  config/apm-server.yml: config/apm-server.yml
+
+packages:
+- apm-server
+
+consumes:
+- name: elasticsearch
+  type: elasticsearch
+  optional: true
+
+properties:
+  apm-server.elasticsearch.prefer_bosh_link:
+    description: "Use bosh link to connect elasticsearch in prioriy to apm-server.elasticsearch.host/port"
+    default: true
+  apm-server.elasticsearch.protocol:
+    description: "Protocol of elasticsearch master to send elasticsearch requests to (http or https)"
+    default: "http"
+  apm-server.elasticsearch.port:
+    description: "Port of elasticsearch master to send elasticsearch requests to"
+    default: "9200"
+  apm-server.elasticsearch.hosts:
+    description: "IP address of elasticsearch master to send elasticsearch requests to"
+    default: 
+    - "127.0.0.1"

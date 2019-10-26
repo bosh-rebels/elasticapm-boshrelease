@@ -1,0 +1,37 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/apm-server
+LOG_DIR=/var/vcap/sys/log/apm-server
+STORE_DIR=/var/vcap/store/apm-server
+JOB_DIR=/var/vcap/jobs/apm-server
+TMP_DIR=/var/vcap/sys/tmp/apm-server
+
+PIDFILE=$RUN_DIR/apm-server.pid
+
+source $JOB_DIR/bin/ctl_utils.sh
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR
+
+    pid_guard $PIDFILE apm-server
+
+    export CONFIG_PATH=$JOB_DIR/config/apm-server.yml
+
+    echo "Starting apm-server..." >>$LOG_DIR/apm-server.stdout.log
+    echo $$ > $PIDFILE
+
+    exec /var/vcap/packages/apm-server/bin/apm-server -c $CONFIG_PATH -e \
+      >>$LOG_DIR/apm-server.stdout.log 2>>$LOG_DIR/apm-server.stderr.log
+    ;;
+
+  stop)
+    echo "Stopping apm-server..." >>$LOG_DIR/apm-server.stdout.log
+    kill_and_wait $PIDFILE
+    ;;
+
+  *)
+  echo "Usage: ctl {start|stop}" ;;
+esac
+exit 0

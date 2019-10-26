@@ -1,0 +1,18 @@
+<%
+  elasticsearch_hosts = []
+  if p("apm-server.elasticsearch.prefer_bosh_link") then
+    if_link("elasticsearch") do |elasticsearch_link| 
+      elasticsearch_link.instances.each do |instance|
+        elasticsearch_hosts << instance.address
+      end
+    end
+  else
+    elasticsearch_hosts = p("apm-server.elasticsearch.hosts")
+  end
+%>
+output.elasticsearch:
+  hosts:   
+  <% elasticsearch_hosts.each do |host| -%>
+<%="- #{p('apm-server.elasticsearch.protocol')}://#{host}:#{p('apm-server.elasticsearch.port')}" %>
+  <% end -%>
+index: "apm-%{[observer.version]}-%{+yyyy.MM.dd}"
