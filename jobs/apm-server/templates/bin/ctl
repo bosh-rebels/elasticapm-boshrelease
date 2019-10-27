@@ -22,7 +22,7 @@ case $1 in
     echo "Starting apm-server..." >>$LOG_DIR/apm-server.stdout.log
     echo $$ > $PIDFILE
 
-    exec /var/vcap/packages/apm-server/bin/apm-server -c $CONFIG_PATH -e \
+    exec /var/vcap/packages/apm-server/apm-server -c $CONFIG_PATH -e \
       >>$LOG_DIR/apm-server.stdout.log 2>>$LOG_DIR/apm-server.stderr.log
     ;;
 
