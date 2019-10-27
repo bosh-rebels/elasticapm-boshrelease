@@ -739,17 +739,17 @@
 # base path for configuration files, including the main YAML configuration file
 # and the Elasticsearch template file. If not set by a CLI flag or in the
 # configuration file, the default for the configuration path is the home path.
-#path.config: ${path.home}
+path.config: /var/vcap/jobs/apm-server/config
 
 # The data path for the apm-server installation. This is the default base path
 # for all the files in which apm-server needs to store its data. If not set by a
 # CLI flag or in the configuration file, the default for the data path is a data
 # subdirectory inside the home path.
-#path.data: ${path.home}/data
+path.data: /var/vcap/store/apm-server
 
 # The logs path for an apm-server installation. If not set by a CLI flag or in the
 # configuration file, the default is a logs subdirectory inside the home path.
-#path.logs: ${path.home}/logs
+path.logs: /var/vcap/sys/log/apm-server
 
 #================================= Logging =================================
 
@@ -955,4 +955,3 @@ output.elasticsearch:
   <% elasticsearch_hosts.each do |host| -%>
 <%="- #{p('apm-server.elasticsearch.protocol')}://#{host}:#{p('apm-server.elasticsearch.port')}" %>
   <% end -%>
-index: "apm-%{[observer.version]}-%{+yyyy.MM.dd}"
