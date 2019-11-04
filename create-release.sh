@@ -2,8 +2,13 @@
 
 THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+
 function latest_version {
-    grep -r '^version: ' releases/apm-server/apm-server-*.yml | awk -F': ' '{print $NF}' | tail -n 1
+    if ls "$THIS_SCRIPT_DIR/"releases/metricbeat/metricbeat-*.yml >/dev/null 2>&1; then
+        grep -r '^version: ' "$THIS_SCRIPT_DIR/"releases/metricbeat/metricbeat-*.yml | awk -F': ' '{print $NF}' | tail -n 1 
+        return 0
+    fi
+    echo "0.0.0"
 }
 
 function bump_minor_version {
@@ -18,17 +23,17 @@ function bump_minor_version {
 }
 
 function main {
-    local amp_server_bosh_release_version
+    local elasticapm_bosh_release_version
     local release_dir
     local tarball
 
-    amp_server_bosh_release_version="$(bump_minor_version "$(latest_version)")"
+    elasticapm_bosh_release_version="$(bump_minor_version "$(latest_version)")"
 
     release_dir="$THIS_SCRIPT_DIR/releases"
-    tarball="apm-server-boshrelease-$amp_server_bosh_release_version.tgz"
+    tarball="elasticapm-boshrelease-$elasticapm_bosh_release_version.tgz"
 
     "$THIS_SCRIPT_DIR"/add-blobs.sh
-    bosh create-release --name=apm-server --force --version="$amp_server_bosh_release_version" --final --tarball="$release_dir/$tarball"
+    bosh create-release --name=elasticapm --force --version="$elasticapm_bosh_release_version" --final --tarball="$release_dir/$tarball"
 }
 
 main
