@@ -58,7 +58,6 @@ describe 'apm-server job' do
           'https://127.0.0.2:9201'
         ]
       )
-      expect(config['output.elasticsearch']['index']).to eq('apm-%{[observer.version]}-%{+yyyy.MM.dd}')
     end
 
     it 'configures elastic search hosts from link succesfully' do
@@ -82,7 +81,6 @@ describe 'apm-server job' do
                 'https://10.0.0.3:9201'
             ]
         )
-        expect(config['output.elasticsearch']['index']).to eq('apm-%{[observer.version]}-%{+yyyy.MM.dd}')
       end
   end
 end
