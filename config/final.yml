@@ -1,4 +1,4 @@
-name: elasticapm-boshrelease
+name: elasticapm
 blobstore:
   provider: local
   options:
