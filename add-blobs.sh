@@ -3,7 +3,7 @@
 THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 DOWNLOAD_FOLDER="$THIS_SCRIPT_DIR/.downloads"
 
-APM_SERVER_VERSION="7.8.1"
+APM_SERVER_VERSION="7.9.0"
 BLOB_FILENAME="apm-server-$APM_SERVER_VERSION.tar.gz"
 APM_SERVER_DOWNLOAD_URL="https://artifacts.elastic.co/downloads/apm-server/apm-server-$APM_SERVER_VERSION-linux-x86_64.tar.gz"
 
