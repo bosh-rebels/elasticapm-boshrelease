@@ -1,5 +1,7 @@
 name: elasticapm
 blobstore:
-  provider: local
+  provider: s3
   options:
-    blobstore_path: /tmp/apm-server-blobs
+    bucket_name: elasticapm-boshrelease-blobstore
+    region: eu-west-2
+    host: s3-eu-west-2.amazonaws.com
