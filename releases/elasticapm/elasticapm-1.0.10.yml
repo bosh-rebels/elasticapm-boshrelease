@@ -1,0 +1,17 @@
+name: elasticapm
+version: 1.0.10
+commit_hash: ffca3bd
+uncommitted_changes: false
+jobs:
+- name: apm-server
+  version: f0110072e907c6f2ec75d90caac8f7d78aadb6468b9cdbc8fefce684d190353d
+  fingerprint: f0110072e907c6f2ec75d90caac8f7d78aadb6468b9cdbc8fefce684d190353d
+  sha1: sha256:7b8770b9be6386348c8d0dae9dcdcc9863dfffb384d1a0ccd03dc56a804f2a71
+  packages:
+  - apm-server
+packages:
+- name: apm-server
+  version: 89fa5a83b9a980eb3797ceed4767413e5feb6131813dd52b0bd285c011ccdf04
+  fingerprint: 89fa5a83b9a980eb3797ceed4767413e5feb6131813dd52b0bd285c011ccdf04
+  sha1: sha256:9306a5035bbb7c3ab004a2bf265ff71aadfb03e8ad02676451307feed4f89f65
+  dependencies: []
