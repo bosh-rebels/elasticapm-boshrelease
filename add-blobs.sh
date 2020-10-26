@@ -1,7 +1,7 @@
 #!/bin/bash
 
 THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-DOWNLOAD_FOLDER="$THIS_SCRIPT_DIR/.downloads"
+DOWNLOAD_FOLDER="/tmp/bosh_downloads"
 
 APM_SERVER_VERSION="7.9.0"
 BLOB_FILENAME="apm-server-$APM_SERVER_VERSION.tar.gz"
