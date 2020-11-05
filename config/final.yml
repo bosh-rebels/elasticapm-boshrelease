@@ -4,3 +4,4 @@ blobstore:
   options:
     bucket_name: elasticapm-boshrelease-blobstore
     region: eu-west-2
+    credentials_source: env_or_profile
