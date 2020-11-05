@@ -1,4 +1,6 @@
 builds:
   5bead387-dbca-4919-4fad-719f1f444033:
     version: 1.0.10
+  e674f5f8-313b-4ef1-676d-0a8ab148a26e:
+    version: 1.0.11
 format-version: "2"
