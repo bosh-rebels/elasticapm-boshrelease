@@ -1,4 +1,4 @@
 set -e
 
 
-tar xzf apm-server/apm-server-7.9.0.tar.gz -C $BOSH_INSTALL_TARGET --strip-components 1
+tar xzf apm-server/apm-server-7.13.3.tar.gz -C $BOSH_INSTALL_TARGET --strip-components 1

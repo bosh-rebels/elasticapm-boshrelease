@@ -1,4 +1,4 @@
-apm-server/apm-server-7.9.0.tar.gz:
-  size: 31126573
-  object_id: 96b9f922-6638-433b-7702-42212324fa92
-  sha: sha256:dd43a3eaa7a8a5df96c99a369a41ada4763d8b7150722c81d7e81a45123b4dab
+apm-server/apm-server-7.13.3.tar.gz:
+  size: 35780005
+  object_id: 1fe17c86-8d56-4484-4f56-97c36a63d547
+  sha: sha256:9bb8a25fcf45d2a897de1bdb604e7f50819d1bff3e52ea17f78a7d2d1dd50128
